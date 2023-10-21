@@ -1,2 +1,4 @@
-**.json
-**.csv
+**/*.json
+**/*.csv
+*.json
+*.csv
