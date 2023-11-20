@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --name-font: 'Lato', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-family: var(--name-font);
+}
+
+.coin-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coin-edit-input, .coin-edit-confirm, .alert-btn {
+    border: none;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.coin-edit-confirm {
+    padding: 8px 16px;
+    background-color: #fe5000;
+    color: white;
+    margin: 0 5px;
+}
+
+.coin-edit-input {
+    width: auto;
+}
+
+.alert-btn {
+    padding: 8px 16px;
+    background-color: #fe5000;
+    color: white;
+    margin: 0 5px;
+}
