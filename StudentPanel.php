@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+error_reporting(0);
+
 $file = "Data/wallet.json";
 $json = json_decode(file_get_contents($file), true);
 $settings = "Data/backend.json";
@@ -13,6 +15,8 @@ $weekday = date("D");
 $er = $scenario[strval($jason["scenario"])]["er"];
 $ir = $scenario[strval($jason["scenario"])]["ir"];
 $headline = $scenario[strval($jason["scenario"])]["scenario"];
+$feedbackFile = "Data/feedbackList.csv";
+$feedback = array_map('str_getcsv', file($feedbackFile));
 
 foreach ($csv as $row) {
     if ($row[0] == $_SESSION["id"]) {
@@ -26,6 +30,7 @@ if (is_null($json[$_SESSION["id"]])) {
     $json[$_SESSION["id"]] = array("coins" => $coins);
     file_put_contents($file, json_encode($json));
     file_put_contents($settings, json_encode($jason));
+    header("Refresh:0");
 }
 
 if ((abs($date - $jason["refreshDate"])) >= 7 && $scenario["weekday"] != $jason["refreshDay"]) {
@@ -45,8 +50,6 @@ $jason["interestRate"] = round(($jason["interestRate"] / 3.0), 3);
 file_put_contents($file, json_encode($json));
 file_put_contents($settings, json_encode($jason));
 file_put_contents("Data/bonds.json", json_encode($bond));
-
-$er = $jason["exchangeRate"];
 ?>
 
 <!DOCTYPE html>
@@ -89,15 +92,28 @@ $er = $jason["exchangeRate"];
                 <p class="exchange-rate">1 &asymp; <?php echo $jason["exchangeRate"]; ?></p>
 
                 <a href="./Exchange.php"><button class="btn exchange-btn">Exchange</button></a>
+                <a href="./Shop.php"><button class="btn shop-btn">Shop</button></a>
 
                 <div class="breaking-news">
                     <h1 id="text">BREAKING NEWS: <?php echo $headline ?></h1>
                 </div>
             </center>
+
+            <?php
+            if ($_SESSION["id"] == 20035656 || $_SESSION["id"] == 20029686) {
+                echo "<center><h1 id='text'>Feedback:</h1>";
+                foreach ($feedback as $row) {
+                    echo "
+                        <p class='feedback-thingy'>" . $row[0] . " - " . $row[1] ."</p>
+                    </center>";
+                }
+            }
+            ?>
         </div>
 
         <div class="footer">
             <p><a href="https://github.com/noahlikesvr/MooreCoin" target="_blank" class="source-code">Source Code</a></p>
+            <p><a href="Feedback.php" class="feedback">Feedback</a></p>
             <p><a href="Credits.php" class="credits">Credits</a></p>
             
             <p>MooreLess &copy; 2023</p>

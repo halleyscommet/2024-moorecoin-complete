@@ -235,6 +235,22 @@ th {
   background-color: var(--header-color);
 }
 
+.shop-btn {
+  width: auto;
+  padding: 25px;
+  background-color: var(--secondary-text-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: x-large;
+  transition: background-color 0.3s;
+}
+
+.shop-btn:hover {
+  background-color: var(--header-color);
+}
+
 .exchange-rate {
   font-size: clamp(1rem, 1vh, 1.5rem);
   color: #ccc;
@@ -253,4 +269,31 @@ th {
   background-color: var(--text-color);
   border-radius: 20px;
   font-size: 16px;
+}
+
+.feedback-thingy {
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--header-color);
+  border: 1px solid #c73f00;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  margin-bottom: 10px;
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+}
+
+.signin-register2 {
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--header-color);
+  border: 1px solid #c73f00;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
 }

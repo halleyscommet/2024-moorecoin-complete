@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+    --font-p: "Lato", sans-serif;
+}
+
+#menu {
+    text-align: center;
+}
+
+#menu h2 {
+    font-size: 35px;
+    font-family: var(--font-p);
+    margin-top: 5px;
+    color: #fe5000;
+}
+
+#menu h2>a:visited {
+    color: #ffffff00;
+}
+
+#content {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}

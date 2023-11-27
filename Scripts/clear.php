@@ -7,7 +7,7 @@ $csvFile = "../Data/login.csv";
 $csv = array_map('str_getcsv', file($csvFile));
 
 if ($_SESSION['id'] != "admin") {
-    header("Location: ../Wallet.php");
+    header("Location: ../StudentPanel.php");
     exit();
 } else {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

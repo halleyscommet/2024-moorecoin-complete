@@ -5,6 +5,9 @@ $file = "../Data/wallet.json";
 $json = json_decode(file_get_contents($file), true);
 $csvFile = "../Data/login.csv";
 $csv = array_map('str_getcsv', file($csvFile));
+$backend = "../Data/backend.json";
+$backendJson = json_decode(file_get_contents($backend), true);
+$money = $backendJson["moneySupply"];
 
 foreach ($csv as $row) {
     if ($row[0] == $_SESSION['id']) {
@@ -46,6 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 // Update the wallet.json file
                 file_put_contents($file, json_encode($json));
+
+                $money -= $input;
+                file_put_contents($backend, json_encode(array("moneySupply" => $money)));
                 
                 // header("Location: ../StudentPanel.php");
                 echo '<script type="text/JavaScript">  
@@ -82,6 +88,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 // Update the wallet.json file
                 file_put_contents($file, json_encode($json));
+
+                $backendJson["moneySupply"] -= $max_coins;
+                file_put_contents($backend, json_encode($backendJson["moneySupply"]));
                 
                 // header("Location: ../StudentPanel.php");
                 echo '<script type="text/JavaScript">  

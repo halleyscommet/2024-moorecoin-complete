@@ -8,6 +8,8 @@ $hour = $_POST['hour'];
 $password = $_POST['age'];
 $email = $id . "@brightonk12.com";
 $file = "../Data/login.csv";
+$settings = "Data/backend.json";
+$jason = json_decode(file_get_contents($settings), true);
 
 $csv = array_map('str_getcsv', file($file));
 $ids = array_column($csv, 0);

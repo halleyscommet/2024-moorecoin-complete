@@ -42,7 +42,7 @@
                             <td>Original Developer</td>
                         </tr>
                         <tr>
-                            <td><img src="./Images/Noah.png" alt="Noah" width="100"></td>
+                            <td><img src="./Images/Noah.jpg" alt="Noah" width="100"></td>
                             <td>Noah Harper</td>
                             <td>Lead Developer / Tester</td>
                         </tr>
@@ -67,6 +67,7 @@
 
         <div class="footer">
             <p><a href="https://github.com/noahlikesvr/MooreCoin" target="_blank" class="source-code">Source Code</a></p>
+            <p><a href="Feedback.php" class="feedback">Feedback</a></p>
             <!-- <p><a href="Credits.php" class="credits">Credits</a></p> -->
             
             <p>MooreLess &copy; 2023</p>

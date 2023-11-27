@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+error_reporting(0);
+
 $file = "Data/wallet.json";
 $json = json_decode(file_get_contents($file), true);
 $settings = "Data/backend.json";
@@ -49,7 +51,7 @@ file_put_contents("Data/bonds.json", json_encode($bond));
 $er = $jason["exchangeRate"];
 
 if ($_SESSION['id'] != "admin") {
-    header("Location: Wallet.php");
+    header("Location: StudentPanel.php");
     exit();
 }
 
@@ -88,7 +90,9 @@ $walletData = json_decode(file_get_contents('Data/wallet.json'), true);
         </div>
 
         <div class="container">
-            <center><h1 id="text">Student MooreCoins</h1></center>
+            <center>
+                <h1 id="text">Student MooreCoins</h1>
+            </center>
         </div>
         <div class="content">
             <div id="coin-actions">
@@ -159,6 +163,7 @@ $walletData = json_decode(file_get_contents('Data/wallet.json'), true);
 
         <div class="footer">
             <p><a href="https://github.com/noahlikesvr/MooreCoin" class="source-code" target="_blank">Source Code</a></p>
+            <p><a href="Feedback.php" class="feedback">Feedback</a></p>
             <p><a href="Credits.php" class="credits">Credits</a></p>
 
             <p>MooreLess &copy; 2023</p>
