@@ -1,46 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>MooreCoin - Home</title>
+        <meta charset="UTF-8">
 
-        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="./CSS/style.css" rel="stylesheet" type="text/css">
+        <title>MooreCoin</title>
 
-        <link rel="icon" type="image/x-icon" href="./Images/favicon.png">
+        <link rel="stylesheet" href="CSS/style.css">
 
-        <meta name="viewport" content="width=device-width">
+        <link rel="icon" type="image/x-icon" href="Images/favicon.png">
     </head>
 
     <body>
-        <div class="header">
-            <img src="./Images/favicon.png" alt="favicon" width="125" id="coin">
-            <h1>MooreCoin</h1>
+        <div id="blurry-circle"></div>
+        <script src="JS/circle.js"></script>
+        <script src="JS/randomSpinAndSize.js"></script>
+
+        <div class="center">
+            <h1>Welcome to <span class="moorecoin">MooreCoin</span>!</h1>
+            <p>The platform for earning extra credit points in the classroom. With automated tracking and built-in awards, you can let your students concentrate on earning prizes rather than traditional grading.</p>
+            <p>Get started by creating an account or logging in.</p>
+            <div class="button-container">
+                <a href="teachersignup.php"><button class="button-full">Sign Up</button></a>
+                <a href="teacherlogin.php"><button class="button-outline">Log In</button></a>
+            </div>
+            <spacer></spacer>
+            <a href="student.php" class="a">I'm a Student</a>
         </div>
-
-        <div class="container">
-            <center><h1 id="text">Signin / Register</h1></center>
-            <form action="./Scripts/redirect.php" method="post" autocomplete="on" class="signin-register">
-                <p><input type="text" name="id" placeholder="Student ID (Required)" maxlength="8" required /></p>
-                <p><input type="text" name="name" placeholder="Full Name (Required on register)" /></p>
-                <p><input type="number" name="hour" placeholder="Class Hour (Required on register)" min="1" max="6" /></p>
-                <p><input type="password" name="age" placeholder="Password (Required)" minlength="8" required /></p>
-
-                <p><input type="submit" style="align-self: center;" /></p>
-            </form>
-        </div>
-
-        <div class="footer">
-            <p><a href="https://github.com/noahlikesvr/MooreCoin" class="source-code" target="_blank">Source Code</a></p>
-            <p><a href="Credits.php" class="credits">Credits</a></p>
-
-            <p>MooreLess &copy; 2023</p>
-        </div>
-        
-        <audio id="soundEffect"> 
-            <source src="./Sounds/pop.mp3" type="audio/mpeg"> 
-            Your browser does not support the audio element. 
-        </audio>
-        <script src="./Secrets/oneko.js"></script>
     </body>
 </html>
